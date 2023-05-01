@@ -1,0 +1,4 @@
+global-hotkeys
+pywin32
+microyc>=0.1.2
+
