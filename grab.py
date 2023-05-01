@@ -20,7 +20,7 @@ import os
 
 load_hotkey="F10"
 upload_hotkey="F3"
-privacy='private'
+privacy='public'
 
 thumb_folder='thumbs'
 file='C:\\Users\\cskaj\\Videos\\replay replay.mp4'
@@ -29,7 +29,8 @@ is_alive=True
 
 teams=[str(i) for i in range(1800,2200)]
 
-match=input('Input match name:')
+match=input('Введите навзвание матча:')
+print('Начал работать. Ожидаю...')
 
 import microyc.utils
 def hotkey():
@@ -41,9 +42,9 @@ def hotkey():
     print("file uploaded")
 
 def upload():
-    team=input("print team:")
+    team=input("Введите год рождения команды:")
     if team not in teams:
-        print('wrong team')
+        print('Неправильный год')
         return 
 
     #thumb upload
@@ -69,6 +70,7 @@ def upload():
         preemptible=True,
         memory='10G',
         cores=10)
+    print('Продолжил работать. Ожидаю...')
 
 
 
