@@ -20,7 +20,8 @@ from time import sleep
 def put_directions(title:str,privacy=default_privacy):
     b=Bucket()
     directions={
-        "title":title
+        "title":title,
+        'privacy':privacy
         }
     b.put(
         Body=json.dumps(directions,),
