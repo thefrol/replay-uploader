@@ -23,7 +23,7 @@ upload_hotkey="F3"
 privacy='public'
 
 thumb_folder='thumbs'
-file='C:\\Users\\cskaj\\Videos\\replay replay.mp4'
+file=os.path.join(os.environ['USERPROFILE'], 'Videos/replay replay.mp4')
 
 is_alive=True
 
