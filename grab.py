@@ -29,7 +29,7 @@ is_alive=True
 
 teams=[str(i) for i in range(1800,2200)]
 
-match=input('Введите навзвание матча:')
+match=input('Введите название матча:')
 print('Все в порядке, я работаю...')
 
 import microyc.utils
