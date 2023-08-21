@@ -1,8 +1,8 @@
 
 import json,os
+from pathlib import Path
 
 directions_ext=".txt"
-image_ext=(".png",".jpg")
 default_privacy="private"
 privacy_options=["public","private","unlisted"]
 out_file="out.mp4"
@@ -28,17 +28,11 @@ def put_directions(title:str,privacy=default_privacy):
         Path=f"{generate_unique()}{directions_ext}"#file name for upload
         )
 
-def put_thumb(file:str):
+def put_thumb(file:Path):
     b=Bucket()
-    if file=="" or file==None:
+    if file==None:
         print("NO thumbnail")
         return
-    if not file.endswith(image_ext):
-        print(f"unsupported thumbnail format. Accepting {image_ext}. Got {file}")
-        return 
-    if not os.path.exists(file):
-        print('file not exist')
-        return 
     ret=b.upload_unique(file)
     print(f'uploaded thumb {ret}')
 

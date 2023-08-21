@@ -22,7 +22,7 @@ load_hotkey="F10"
 upload_hotkey="F3"
 privacy='public'
 
-thumb_folder='thumbs'
+thumb_folder=Path('thumbs')
 file=os.path.join(os.environ['USERPROFILE'], 'Videos/replay replay.mp4')
 
 is_alive=True
@@ -48,8 +48,12 @@ def upload():
         return 
 
     #thumb upload
-    thumbnail_name=f'{team}.png'
-    put_thumb(str(Path(thumb_folder)/thumbnail_name))
+
+    for x in thumb_folder.iterdir():
+        if x.is_file():
+            if f'{team}' in x.name:
+                print("found thumb")
+                put_thumb(x)
 
     #directions finisher
     title=f'{match}. Обзор {team} г.р.'
